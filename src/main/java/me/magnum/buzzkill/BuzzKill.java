@@ -32,7 +32,8 @@ public class BuzzKill extends JavaPlugin implements Listener {
 			event.setCancelled(true);
 			log.info("Bee spawn prevented due to: " + spawnReason);
 			for (Player player : getServer().getOnlinePlayers()) {
-				player.sendMessage("[BuzzKill] Just prevented bee spawn - Reason: " + spawnReason);
+				if (player.hasPermission("buzzkill.notify"))
+					player.sendMessage("[BuzzKill] Just prevented bee spawn - Reason: " + spawnReason);
 			}
 		}
 	}
