@@ -30,9 +30,8 @@ public class BuzzKill extends JavaPlugin implements Listener {
 		if (event.getEntity().getType().equals(EntityType.BEE)) {
 			String spawnReason = event.getSpawnReason().toString();
 			event.setCancelled(true);
-			log.info("Bee spawn prevented due to: " + spawnReason);
 			for (Player player : getServer().getOnlinePlayers()) {
-				if (player.hasPermission("buzzkill.notify"))
+				if (player.hasPermission("buzzkill.notify.bee"))
 					player.sendMessage("[BuzzKill] Just prevented bee spawn - Reason: " + spawnReason);
 			}
 		}

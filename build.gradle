@@ -23,19 +23,18 @@ spigot {
         }
     }
 */
-/*
     permissions {
-        'test.foo' {
-            description = 'Allows foo command'
-            defaults = 'true'
+        'buzzkill.notify.*' {
+            description = 'Receive notifications when a spawn is blocked'
+            defaults = 'false'
+            children = ['buzzkill.notify.bee': true]
         }
-        'test.*' {
-            description = 'Wildcard permission'
-            defaults = 'op'
+        'buzzkill.notify.bee' {
+            description = 'Receive notifications when a bee spawn is blocked'
+            defaults = 'false'
             children = ['test.foo': true]
         }
     }
-*/
 }
 
 repositories {
